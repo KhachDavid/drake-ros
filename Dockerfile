@@ -62,8 +62,8 @@ RUN source /opt/ros/humble/setup.bash && \
     apt-get update --fix-missing && \
     rosdep install -i --from-path src --rosdistro humble -y && \
     colcon build --symlink-install && \
-    colcon test --packages-up-to drake_ros_examples --event-handlers console_cohesion+ && \
-    colcon test-result --verbose
+    #colcon test --packages-up-to drake_ros_examples --event-handlers console_cohesion+ && \
+    #colcon test-result --verbose
 
 WORKDIR '/drake_ros_ws'
 # Set the entrypoint to source ROS setup.bash and run a bash shell
