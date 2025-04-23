@@ -1,6 +1,6 @@
 # Dockerfile for drake-ros
 
-ARG ARCH
+ARG ARCH=arm64
 FROM ${ARCH}/ros:humble
 
 # Set shell for running commands
@@ -56,6 +56,9 @@ RUN cd drake-ros
 # ROS2 workspace setup
 RUN mkdir -p drake_ros_ws/src/drake_ros
 COPY . /drake_ros_ws/src/drake_ros
+
+RUN apt-get update && apt-get install -y ros-humble-rviz2 
+RUN apt-get install -y libogre-1.12-dev
 
 RUN source /opt/ros/humble/setup.bash && \
     cd drake_ros_ws/ && \
