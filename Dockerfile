@@ -61,7 +61,7 @@ RUN source /opt/ros/humble/setup.bash && \
     cd drake_ros_ws/ && \
     apt-get update --fix-missing && \
     rosdep install -i --from-path src --rosdistro humble -y && \
-    colcon build --symlink-install && \
+    colcon build --symlink-install
     #colcon test --packages-up-to drake_ros_examples --event-handlers console_cohesion+ && \
     #colcon test-result --verbose
 
